@@ -5,7 +5,7 @@ const menu = {
     mains: [],
     desserts: [],
   },
-  
+  //getter and setter methods not crucial for this challenge but good practice when seting upo objects.
   get appetizers() {
     return this._courses.appetizers;
   },
@@ -46,13 +46,14 @@ const dish = {
 this._courses[courseName].push(dish);
   },
 
+//had issues with incorrectly written Math.random() missing brackets and not defining randomIndex properly
   getRandomDishFromCourse(courseName) {
 const dishes = this._courses[courseName];
 const randomIndex = Math.floor(Math.random() * dishes.length);
 return dishes[randomIndex];
   },
 
-
+//had issues with dessert.meal typo instead of dessert.name
 generateRandomMeal() {
 const appetizer = this.getRandomDishFromCourse('appetizers');
 const main = this.getRandomDishFromCourse('mains');
